@@ -4,10 +4,10 @@
 All scripts begin with **FMT:** (colon)  
 All Custom Functions begine with **FMT.** (period)
 
-## Scripts
+# Scripts
 Scripts used in special situations to help display or save test data
 
-### FMT:WriteOutputBuffers 
+## FMT:WriteOutputBuffers 
 Writes the available testing output from $$FMT_Output and $$FMT_OutputSummary into the FMT::Output and FMT::Output_Summary global fields.  
 Note: FMT::Output and FMT::Output_Summary must be on the layout and writable when this script is called  
 
@@ -20,7 +20,7 @@ Note: FMT::Output and FMT::Output_Summary must be on the layout and writable whe
 
 
 
-### FMT:Reset  
+## FMT:Reset  
 Resets all Global variables and fields used by FMTest  
    
 **Parameters {empty}**  
@@ -28,11 +28,11 @@ Resets all Global variables and fields used by FMTest
 **Returns {empty}**  
 
 
-## Custom Functions
+# Custom Functions
 Custom Functions make up the 'testing' components. This allows you to write test scripts using as little or as much of FMTest's functions as you like.
 
 
-### FMT.DescribeTest  
+## FMT.DescribeTest  
 `FMT.DescribeTest( describe )`  
 
 Place before a set of Assertions that make up a test scenrio.  
@@ -56,7 +56,7 @@ No change
 
 
 
-### [FMT.Assert](#FMT.Assert)  
+## [FMT.Assert](#FMT.Assert)  
 Each of the Assert custom functions below has the following:
 
 **Parameters**  
@@ -80,7 +80,7 @@ No change
 
 
 
-### FMT.Assert.Equals  
+## FMT.Assert.Equals  
 `FMT.Assert.Equals ( describe_thing ; thing ; value )`  
 
 Test that thing = value
@@ -89,14 +89,14 @@ Test that thing = value
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 
-### FMT.Assert.NotEquals  
+## FMT.Assert.NotEquals  
 `FMT.Assert.NotEquals ( describe_thing ; thing ; value )`  
 Test that thing <> value  
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
-### FMT.Assert.GreaterThan  
+## FMT.Assert.GreaterThan  
 `FMT.Assert.GreaterThan ( describe_thing ; thing ; value )`  
 
 Test that thing > value
@@ -104,7 +104,7 @@ Test that thing > value
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
-### FMT.Assert.LessThan  
+## FMT.Assert.LessThan  
 `FMT.Assert.LessThan ( describe_thing ; thing ; value )`  
  
 Test that thing < value
@@ -112,7 +112,7 @@ Test that thing < value
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
-### FMT.Assert.Empty 
+## FMT.Assert.Empty 
 `FMT.Assert.Empty ( describe_thing ; thing )`  
  
 Test that thing is empty
@@ -120,7 +120,7 @@ Test that thing is empty
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
-### FMT.Assert.NotEmpty 
+## FMT.Assert.NotEmpty 
 `FMT.Assert.NotEmpty ( describe_thing ; thing )`  
 
 Test that thing is not empty
@@ -128,7 +128,7 @@ Test that thing is not empty
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
-### FMT.Assert.HasJSONKey 
+## FMT.Assert.HasJSONKey 
 `FMT.Assert.HasJSONKey ( describe_thing ; thing ; value )`  
 
 Test that the JSONObject in thing has the expected Key (definied by value)
@@ -136,14 +136,14 @@ Test that the JSONObject in thing has the expected Key (definied by value)
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
-### FMT.Assert.IsInList  
+## FMT.Assert.IsInList  
 `FMT.Assert.IsInList ( describe_thing ; thing ; value )`  
  
 Test that value is in a FileMaker list
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
-### FMT.Assert.NotIsInList  
+## FMT.Assert.NotIsInList  
 `FMT.Assert.IsInList ( describe_thing ; thing ; value )`  
 
 Test that value is not in a FileMaker list
@@ -154,7 +154,7 @@ Test that value is not in a FileMaker list
 
 ## Initialisers and Concluders
 
-### FMT.InitTestScript 
+## FMT.InitTestScript 
 `FMT.InitTestScript ()`  
 
 **Paramaters {empty}**  
@@ -177,7 +177,7 @@ Adds the TestScript script name
 Adds the TestScript script name
 
 
-### FMT.ConcludeTestScript 
+## FMT.ConcludeTestScript 
 `FMT.ConcludeTestScript ()`  
 
 Test that value is not in a FileMaker list
@@ -202,7 +202,7 @@ Adds the script summary
 Adds the script summary
 
 
-### FMT.InitTestCase 
+## FMT.InitTestCase 
 `FMT.InitTestCase ()`  
 
 **Paramaters {empty}**  
@@ -219,7 +219,7 @@ Adds the TestCase script name
 **$$FMT_OutputSummaryBuffer**   
 Adds the TestCase script name
 
-#### FMT.ConcludeTestCase   
+## FMT.ConcludeTestCase   
 `FMT.ConcludeTestCase ()`  
 
 Set a variable using this Custom Function after all Test Scripts have been run  
@@ -239,9 +239,9 @@ Adds conclusion info text
 Adds conclusion info text
 
 
-## Helpers
+# Helpers
 
-### FMT.StartTimer  
+## FMT.StartTimer  
 `FMT.StartTimer ("MyTimer")`  
 
 Starts a timer with the given name  
@@ -262,7 +262,7 @@ Adds "identfier: Timer Started"
 no change
 
 
-### FMT.GetTimer  
+## FMT.GetTimer  
 `FMT.GetTimer ("MyTimer")`  
 
 Get's the time in Milliseconds since the timer started   

@@ -6,8 +6,8 @@ For developers who want to intergrate FMTest with other systems.
 
 
 
-## Global Variables used by FMT  
-### $$FMT {JSONObject}  
+# Global Variables used by FMT  
+## $$FMT {JSONObject}  
 Contains the results and meta data used by FMTest  
 ```
   "testCaseName": {JSONString} The script name of the TESTCASE script
@@ -37,8 +37,8 @@ Contains the results and meta data used by FMTest
               "result": {JSONBoolean} The assertion result
 ```
 
-### $$FMT_OutputBuffer {text}  
+## $$FMT_OutputBuffer {text}  
 Holds the Output text from FMT custom functions until the script FMT:WriteOutputBuffers is run  
 
-### $$FMT_SummaryOutputBuffer {text}  
+## $$FMT_SummaryOutputBuffer {text}  
 Holds the Summary Output text from FMT custom functions until the script FMT:WriteOutputBuffers is run 
