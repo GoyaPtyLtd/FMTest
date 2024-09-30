@@ -10,22 +10,22 @@ Download the Addon here TODO
 
 ## Testing Custom Functions
 ```
-Set Variable [ $init ; FMT.InitTestScript ()]
+Set Variable [ $init ; FMT.InitTestScript ]
 
 
 # Run the custom function and test as often as needed
 Set Variable [ $test ; [
   FMT.Describe ( "Check MyCustomFunction with Numbers" ) &
-  FMT.Assert.GreaterThan (  MyCustomFunction( 300 ) ; 200 )
-  FMT.Assert.LessThan (  MyCustomFunction( 10 ) ; 200 )
+  FMT.Assert.GreaterThan (  "Result of 300"; MyCustomFunction( 300 ) ; 200 )
+  FMT.Assert.LessThan (  "Result of 10"; "MyCustomFunction( 10 ) ; 200 )
 ]]
 
 Set Variable [ $test ; [
   FMT.Describe ( "Check MyCustomFunction with text" ) &
-  FMT.Assert.Equals ( MyCustomFunction( "Hi" ) ; "Hello" )
+  FMT.Assert.Equal ( "Result of 'Hi'"; MyCustomFunction( "Hi" ) ; "Hello" )
 ]]
 
-Set Variable [ $conclude ; FMT.ConcludeTestScript ()]
+Set Variable [ $conclude ; FMT.ConcludeTestScript ]
 Perform Script [ FMT:WriteOutputBuffers ]
 ```
 
@@ -42,13 +42,13 @@ Set Variable [$isField3Hidden; GetLayoutObjectAttribute( "MyField3"; "isObjectHi
 # Check the results
 Set Variable [ $test ; [
   FMT.Describe ( "Check calcs" ) &
-  FMT.Assert.Equals ( "Field3 Hidden"; $isField3Hidden ; false ) &
+  FMT.Assert.Equal ( "Field3 Hidden"; $isField3Hidden ; false ) &
   FMT.Assert.LessThan ( "Field4 Calc"; MyTable::Field4_c ; 250 )
 ]]
 
 # ### Repeat data setup with different data then checking results as often as needed ### #
 
-Set Variable [ $conclude ; FMT.ConcludeTestScript ()]
+Set Variable [ $conclude ; FMT.ConcludeTestScript ]
 Perform Script [ FMT:WriteOutputBuffers ]
 ```
 There are lots of places where calculations can exist, but can't be tested.  
@@ -58,7 +58,7 @@ I suggest placeing any complex scripts as either Custom Functions or Field Calcu
 
 ## Testing Scripts
 ```
-Set Variable [ $init ; FMT.InitTestScript ()]
+Set Variable [ $init ; FMT.InitTestScript ]
 
 # Set the data for the test
 Set Field [ MyTable::Field1; "Hi" ]
@@ -77,7 +77,7 @@ Set Variable [ $test ; [
 
 # ### Repeat data setup with different data, performing the script and check results as often as needed ### #
 
-Set Variable [ $conclude ; FMT.ConcludetestScript ()]
+Set Variable [ $conclude ; FMT.ConcludetestScript ]
 Perform Script [ FMT:WriteOutputBuffers ]
 ```
 
@@ -87,12 +87,12 @@ If you want to watch the test results populate in the global field you can call 
 
 
 ## FMTest's (opinionated) Testing Structure  
-TESTCASE has 1 or many TESTSSCRIPTS  
-TESTSCRIPT has 1 or may TESTS  
-TEST has 1 or many ASSERTIONS  
+TESTSUITE has 1 or many TESTSSCRIPTS  
+TESTSCRIPT has 1 or many TESTCASES  
+TESTCASE has 1 or many ASSERTIONS  
 
 
 # Contribute  
-All of FMTests Custom Functions have been separated out into calculation files.
+All FMTest's Custom Functions have been separated out into calculation files.
 Fork this repo, adjust the CF's and make a pull request  
 TODO

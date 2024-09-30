@@ -29,27 +29,37 @@ Resets all Global variables and fields used by FMTest
 
 
 # Custom Functions
-Custom Functions make up the 'testing' components. This allows you to write test scripts using as little or as much of FMTest's functions as you like.
+Custom Functions make up the 'testing' components. This allows you to write test scripts using as little or as much of FMTest's functions as you like.  
 
 
-## FMT.DescribeTest  
-`FMT.DescribeTest( describe )`  
+These Custom Functions update 3 main Global Variables as well as returning data.  
 
-Place before a set of Assertions that make up a test scenrio.  
-This should be called before calling Assertions of the current test scenerio  
+* FMT {JSONObject} All data and test results are stored here in JSON format allowing for intergration with other platforms   
+* FMT_OutputBuffer {Text} Holds the Output text from FMT custom functions until the script FMT:WriteOutputBuffers is run  
+* FMT_OutputSummaryBuffer {Text} Holds the Output Summary text from FMT custom functions until the script FMT:WriteOutputBuffers is run  
+
+For general use, you don't need to know about them. However the effects on each of these globals is discussed in the Custom Function descriptions below.
+
+[More info about the $$FMT JSON structure etc in Under the Hood](UnderTheHood.md)
+
+## FMT.Describe  
+`FMT.Describe( testcase_description )`  
+
+Place before a set of Assertions that make up a test case.  
+This should be called before calling Assertions of the current test case  
 
 **Paramaters**  
-* _describe_  {Text} Description of the scenrio you are testing
+* _describe_  {Text} Description of the case you are testing
 
 **Returns {JSONObject}**  
-* _describe_ {text} As passed into the function
-* _results_ {JSONArray} Results of each Assertion following this Describe. Note: It is empty at this stage
+* _description_ {text} As passed into the function
+* _assertions_ {JSONArray} Results of each Assertion following this Describe. Note: It is empty at this stage
 
 **$$FMT**  
-Adds a new result object to $$FMT.scripts[].tests[]
+Adds the new test JSONObject to $$FMT.scripts[].tests[]
 
 **$$FMT_OutputBuffer**   
-Adds the Description name
+Print the Description
 
 **$$FMT_OutputSummaryBuffer**   
 No change
@@ -60,28 +70,28 @@ No change
 Each of the Assert custom functions below has the following:
 
 **Parameters**  
-* _describe_ {Text} As passed into the function
-* _thing_ {Any} The variable or function to test
-* _value_ {Any} The expected value, or thing to find in thing (depending on the assertion)
+* _describe_thing {Text} Describe the thing you are asserting
+* _value_ {Any} The actual value from your script or calculation
+* _expected_value_ {Any} The expected value, or thing to find in thing such as the item  to find in a list
   
 **Returns {JSONObject}**  
 * _describe_ {Text} As passed into the function
 * _result_ {Boolean} The result of the test
-* _errorText_ {Text} Text indicating thing does not have the expected value
+* _failText_ {Text} Text indicating thing does not have the expected value
 
 **$$FMT**  
-Adds a new result object to $$FMT.Scripts[].results[].results[]
+Adds the new assertion JSONObject to $$FMT.scripts[].tests[].assertions[]
 
 **$$FMT_OutputBuffer**   
-Adds the resulting text from the test
+Prints the resulting text from the test
 
 **$$FMT_OutputSummaryBuffer**   
 No change
 
 
 
-## FMT.Assert.Equals  
-`FMT.Assert.Equals ( describe_thing ; thing ; value )`  
+## FMT.Assert.Equal  
+`FMT.Assert.Equal ( describe_thing ; value ; expected_value )`  
 
 Test that thing = value
 
@@ -90,14 +100,14 @@ Test that thing = value
 
 
 ## FMT.Assert.NotEquals  
-`FMT.Assert.NotEquals ( describe_thing ; thing ; value )`  
+`FMT.Assert.NotEquals ( describe_thing ; value ; expected_value )`  
 Test that thing <> value  
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.GreaterThan  
-`FMT.Assert.GreaterThan ( describe_thing ; thing ; value )`  
+`FMT.Assert.GreaterThan ( describe_thing ; value ; expected_value )`  
 
 Test that thing > value
 
@@ -105,7 +115,7 @@ Test that thing > value
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.LessThan  
-`FMT.Assert.LessThan ( describe_thing ; thing ; value )`  
+`FMT.Assert.LessThan ( describe_thing ; value ; expected_value )`  
  
 Test that thing < value
 
@@ -113,7 +123,7 @@ Test that thing < value
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.Empty 
-`FMT.Assert.Empty ( describe_thing ; thing )`  
+`FMT.Assert.Empty ( describe_thing ; value )`  
  
 Test that thing is empty
 
@@ -121,7 +131,7 @@ Test that thing is empty
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.NotEmpty 
-`FMT.Assert.NotEmpty ( describe_thing ; thing )`  
+`FMT.Assert.NotEmpty ( describe_thing ; value )`  
 
 Test that thing is not empty
 
@@ -129,7 +139,7 @@ Test that thing is not empty
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.HasJSONKey 
-`FMT.Assert.HasJSONKey ( describe_thing ; thing ; value )`  
+`FMT.Assert.HasJSONKey ( describe_thing ; json ; key )`  
 
 Test that the JSONObject in thing has the expected Key (definied by value)
 
@@ -137,14 +147,14 @@ Test that the JSONObject in thing has the expected Key (definied by value)
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.IsInList  
-`FMT.Assert.IsInList ( describe_thing ; thing ; value )`  
+`FMT.Assert.IsInList ( describe_thing ; list ; expected_value )`  
  
 Test that value is in a FileMaker list
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.NotIsInList  
-`FMT.Assert.IsInList ( describe_thing ; thing ; value )`  
+`FMT.Assert.IsInList ( describe_thing ; list ; expected_value )`  
 
 Test that value is not in a FileMaker list
 
@@ -168,13 +178,13 @@ Test that value is not in a FileMaker list
 * _assertionfailCount_ {JSONNumber} The number of fails in this test script (initially 0)  
 
 **$$FMT**  
-Adds the test script details to $$FMT.Scripts[]
+Adds the test script details to $$FMT.scripts[]
 
 **$$FMT_OutputBuffer**   
-Adds the TestScript script name
+Prints the TestScript script name
 
 **$$FMT_OutputSummaryBuffer**   
-Adds the TestScript script name
+Prints the TestScript script name
 
 
 ## FMT.ConcludeTestScript 
@@ -196,10 +206,10 @@ Test that value is not in a FileMaker list
 No change
 
 **$$FMT_OutputBuffer**   
-Adds the script summary
+Prints the script summary
 
 **$$FMT_OutputSummaryBuffer**   
-Adds the script summary
+Prints the script summary
 
 
 ## FMT.InitTestCase 
@@ -214,10 +224,10 @@ The new $$FMT JSONObject
 Adds the testcase name
 
 **$$FMT_OutputBuffer**   
-Adds the TestCase script name
+Prints the TestCase script name
 
 **$$FMT_OutputSummaryBuffer**   
-Adds the TestCase script name
+Prints the TestCase script name
 
 ## FMT.ConcludeTestCase   
 `FMT.ConcludeTestCase ()`  
@@ -233,10 +243,10 @@ The entire $$FMT JSONObject
 No change
 
 **$$FMT_OutputBuffer**  
-Adds conclusion info text
+Prints conclusion info text
 
 **$$FMT_OutputSummaryBuffer**  
-Adds conclusion info text
+Prints conclusion info text
 
 
 # Helpers
@@ -247,16 +257,16 @@ Adds conclusion info text
 Starts a timer with the given name  
 
 **Paramaters**  
-* _identifier_ {text} The name of the timer
+* _identifier_ {text} The name of the timer. Default: The script name
 
 **Returns {number}**  
 The UTC milliseconds start time
 
 **$$FMT**  
-Adds 'identifierStartTime' to the current script
+Adds 'identifierStartTime' to the current script JSONObject
 
 **$$FMT_OutputBuffer**  
-Adds "identfier: Timer Started"
+Prints "identfier: Timer Started"
 
 **$$FMT_OutputSummaryBuffer**  
 no change
@@ -269,17 +279,17 @@ Get's the time in Milliseconds since the timer started
 
 
 **Paramaters**  
-* _identifier_ {text} The name of the timer
+* _identifier_ {text} The name of the timer. Default: The script name
 
 **Returns {number}**  
 The milliseconds since the timer started
 
 **$$FMT**  
-Adds 'identifierEndTime' {JSONNumber} and 'identifierTotalTime' {JSONNumber} to the current script  
-If GetTimer is called more than once for the same identifier, it overwrites these values. 
+Adds 'identifierEndTime' {JSONNumber} and 'identifierTotalTime' {JSONNumber} to the current script JSONObject    
+If GetTimer is called more than once for the same identifier in the same test script it overwrites these values 
 
 **$$FMT_OutputBuffer**  
-Adds "identfier: xxxx ms"
+Prints "identfier: xxxx ms"
 
 **$$FMT_OutputSummaryBuffer**  
 no change

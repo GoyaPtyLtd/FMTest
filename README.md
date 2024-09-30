@@ -13,10 +13,10 @@ My Variable should equal 1 PASS
 
 There are also initialisers and concluders that help get more information
 ```
-Set Variable [ $init ; FMT.InitTestScript ()]
+Set Variable [ $init ; FMT.InitTestScript ]
 Set Variable [ $describe ; FMT.Describe ( "My test scenario" )]
 Set Variable [ $assert ; FMT.Assert.Equals ("My Variable"; $myvar ; 1 )]
-Set Variable [ $conclude ; FMT.ConcludetestScript ()]
+Set Variable [ $conclude ; FMT.ConcludetestScript ]
 Perform Script [ FMT.WriteOutputBuffers ]
 ```
 Which results in the global output displaying
