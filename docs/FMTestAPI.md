@@ -49,7 +49,7 @@ Place before a set of Assertions that make up a test case.
 This should be called before calling Assertions of the current test case  
 
 **Paramaters**  
-* _describe_  {Text} Description of the case you are testing
+* _testcase_description_  {Text} Description of the test case you are testing
 
 **Returns {JSONObject}**  
 * _description_ {text} As passed into the function
