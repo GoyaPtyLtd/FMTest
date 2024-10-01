@@ -34,9 +34,9 @@ Custom Functions make up the 'testing' components. This allows you to write test
 
 These Custom Functions update 3 main Global Variables as well as returning data.  
 
-* FMT {JSONObject} All data and test results are stored here in JSON format allowing for intergration with other platforms   
-* FMT_OutputBuffer {Text} Holds the Output text from FMT custom functions until the script FMT:WriteOutputBuffers is run  
-* FMT_OutputSummaryBuffer {Text} Holds the Output Summary text from FMT custom functions until the script FMT:WriteOutputBuffers is run  
+* _$$FMT_ {JSONObject} All data and test results are stored here in JSON format allowing for intergration with other platforms   
+* _$$FMT_OutputBuffer_ {Text} Holds the Output text from FMT custom functions until the script FMT:WriteOutputBuffers is run  
+* _$$FMT_OutputSummaryBuffer_ {Text} Holds the Output Summary text from FMT custom functions until the script FMT:WriteOutputBuffers is run  
 
 For general use, you don't need to know about them. However the effects on each of these globals is discussed in the Custom Function descriptions below.
 
