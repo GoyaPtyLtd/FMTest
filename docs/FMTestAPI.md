@@ -149,7 +149,8 @@ Test that the JSONObject in thing has the expected Key (definied by value)
 ## FMT.Assert.IsInList  
 `FMT.Assert.IsInList ( describe_assertion ; list ; expected_value )`  
  
-Test that value is in a FileMaker list
+Test that value is in a FileMaker list  
+
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
