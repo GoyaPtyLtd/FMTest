@@ -10,12 +10,12 @@ For developers who want to intergrate FMTest with other systems.
 ### $$FMT {JSONObject}  
 Contains the results and meta data used by FMTest  
 ```
-  "testCaseName": {JSONString} The script name of the TESTCASE script
-  "assertionCount": {JSONNumber} The total number of assertions made for the TESTCASE,
-  "failCount": {JSONNumber} The total number of fails for the TESTCASE,
-  "passCount": {JSONNumber} The total number of passes for the TESTCASE,
-  "result": {JSONBoolean} The overall result of the TESTCASE,
-  "resultText": {JSONString} The overall resulat as text for the TESTCASE,
+  "testCaseName": {JSONString} The script name of the TESTSUITE script
+  "assertionCount": {JSONNumber} The total number of assertions made for the TESTSUITE,
+  "assertionFailCount": {JSONNumber} The total number of fails for the TESTSUITE,
+  "assertionPassCount": {JSONNumber} The total number of passes for the TESTSUITE,
+  "result": {JSONBoolean} The overall result of the TESTSUITE,
+  "resultText": {JSONString} The overall result as text for the TESTSUITE,
 
   "scripts": []
       "scriptName": {JSONString} Name of the TESTSCRIPT
@@ -25,14 +25,14 @@ Contains the results and meta data used by FMTest
       "result": {JSONBoolean} The overall result of this TESTSCRIPT,
 
       "tests": []
-          "describe": {JSONString} The Describe text of the TEST,
-          "assertionCount": {JSONNumber} The number of assertions for this TEST,
-          "assertionFailCount": {JSONNumber} The number of fails for this TEST,
-          "assertionPassCount": {JSONNumber} The number of passes for this TEST,
-          "result": {JSONBoolean} The overall result of this TEST,
+          "description": {JSONString} The Describe text of the TESTCASE,
+          "assertionCount": {JSONNumber} The number of assertions for this TESTCASE,
+          "assertionFailCount": {JSONNumber} The number of fails for this TESTCASE,
+          "assertionPassCount": {JSONNumber} The number of passes for this TESTCASE,
+          "result": {JSONBoolean} The overall result of this TESTCASE,
 
           "assertions": []
-              "describe_thing": {JSONString} The thing you are testing in words,
+              "description": {JSONString} The thing you are testing in words,
               "failText": {JSONString} The fail text of the assertion,
               "result": {JSONBoolean} The assertion result
 ```
