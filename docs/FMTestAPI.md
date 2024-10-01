@@ -70,12 +70,12 @@ No change
 Each of the Assert custom functions below has the following:
 
 **Parameters**  
-* _describe_thing {Text} Describe the thing you are asserting
+* _describe_assertion_ {Text} Describe the thing you are asserting
 * _value_ {Any} The actual value from your script or calculation
 * _expected_value_ {Any} The expected value, or thing to find in thing such as the item  to find in a list
   
 **Returns {JSONObject}**  
-* _describe_ {Text} As passed into the function
+* _description_ {Text} As passed into the function
 * _result_ {Boolean} The result of the test
 * _failText_ {Text} Text indicating thing does not have the expected value
 
@@ -91,7 +91,7 @@ No change
 
 
 ## FMT.Assert.Equal  
-`FMT.Assert.Equal ( describe_thing ; value ; expected_value )`  
+`FMT.Assert.Equal ( describe_assertion ; value ; expected_value )`  
 
 Test that thing = value
 
@@ -100,14 +100,14 @@ Test that thing = value
 
 
 ## FMT.Assert.NotEquals  
-`FMT.Assert.NotEquals ( describe_thing ; value ; expected_value )`  
+`FMT.Assert.NotEquals ( describe_assertion ; value ; expected_value )`  
 Test that thing <> value  
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.GreaterThan  
-`FMT.Assert.GreaterThan ( describe_thing ; value ; expected_value )`  
+`FMT.Assert.GreaterThan ( describe_assertion ; value ; expected_value )`  
 
 Test that thing > value
 
@@ -115,7 +115,7 @@ Test that thing > value
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.LessThan  
-`FMT.Assert.LessThan ( describe_thing ; value ; expected_value )`  
+`FMT.Assert.LessThan ( describe_assertion ; value ; expected_value )`  
  
 Test that thing < value
 
@@ -123,7 +123,7 @@ Test that thing < value
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.Empty 
-`FMT.Assert.Empty ( describe_thing ; value )`  
+`FMT.Assert.Empty ( describe_assertion ; value )`  
  
 Test that thing is empty
 
@@ -131,7 +131,7 @@ Test that thing is empty
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.NotEmpty 
-`FMT.Assert.NotEmpty ( describe_thing ; value )`  
+`FMT.Assert.NotEmpty ( describe_assertion ; value )`  
 
 Test that thing is not empty
 
@@ -139,7 +139,7 @@ Test that thing is not empty
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.HasJSONKey 
-`FMT.Assert.HasJSONKey ( describe_thing ; json ; key )`  
+`FMT.Assert.HasJSONKey ( describe_assertion ; json ; key )`  
 
 Test that the JSONObject in thing has the expected Key (definied by value)
 
@@ -147,14 +147,14 @@ Test that the JSONObject in thing has the expected Key (definied by value)
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.IsInList  
-`FMT.Assert.IsInList ( describe_thing ; list ; expected_value )`  
+`FMT.Assert.IsInList ( describe_assertion ; list ; expected_value )`  
  
 Test that value is in a FileMaker list
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.NotIsInList  
-`FMT.Assert.IsInList ( describe_thing ; list ; expected_value )`  
+`FMT.Assert.IsInList ( describe_assertion ; list ; expected_value )`  
 
 Test that value is not in a FileMaker list
 
