@@ -1,5 +1,7 @@
 # FMTest
 
+_FileMaker 2024/21 is required as FMTest uses the new JSONArray functions!_
+
 FMTest is a collection of Custom Functions and Scripts to assist you in testing your calculations and scripts with a minimal reliance on structure. At the smallest you can simply write a script like this:
 ```
 Set Variable [ $myvariable ; A_Calc_Or_ScriptResult_ToTest ]
