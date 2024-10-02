@@ -2,10 +2,11 @@
 
 
 # Install
-Download the Addon here TODO
+[Download FMTest here](https://github.com/GoyaPtyLtd/FMTest/releases/tag/FMTest)
 
 
 # Getting Started  
+
 # Examples
 
 ## Testing Custom Functions
