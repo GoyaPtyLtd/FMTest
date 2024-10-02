@@ -4,7 +4,6 @@
 # Install
 [Download FMTest here](https://github.com/GoyaPtyLtd/FMTest/releases)
 
-https://github.com/GoyaPtyLtd/FMTest/releases
 # Getting Started  
 
 # Examples
