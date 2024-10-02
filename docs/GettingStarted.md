@@ -2,7 +2,7 @@
 
 
 # Install
-[Download FMTest here](https://github.com/GoyaPtyLtd/FMTest/releases)
+[Download FMTest here](https://github.com/GoyaPtyLtd/Addon/releases)
 
 # Getting Started  
 
