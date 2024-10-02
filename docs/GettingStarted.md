@@ -90,9 +90,3 @@ If you want to watch the test results populate in the global field you can call 
 TESTSUITE has 1 or many TESTSSCRIPTS  
 TESTSCRIPT has 1 or many TESTCASES  
 TESTCASE has 1 or many ASSERTIONS  
-
-
-# Contribute  
-All FMTest's Custom Functions have been separated out into calculation files.
-Fork this repo, adjust the CF's and make a pull request  
-TODO
