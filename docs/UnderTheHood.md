@@ -52,10 +52,10 @@ Holds the Summary Output text from FMT custom functions until the script FMT:Wri
 
 Once the tests are complete you can do whatever you like with these.
 Some examples would be: 
- * returning FMT::SummaryOutput to Slack when tests are run from a slask command
- * Use GetAsCSS(FMT::Output) and sftp the results to a web server for easy access to the result.
+ * returning FMT::SummaryOutput to Slack when tests are run from a slash command
+ * Use GetAsCSS(FMT::Output) and sftp the results to a web server for easy access to the result
  * Use FMT::SummaryOutput for a local notification
  * Store FMT::Output in a FileMaker table
- * etc etc etc
+ * And so on - let me know what you do!
   
 
