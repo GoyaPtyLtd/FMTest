@@ -10,7 +10,7 @@ For developers who want to intergrate FMTest with other systems.
 ### $$FMT {JSONObject}  
 Contains the results and meta data used by FMTest  
 ```
-  "testCaseName": {JSONString} The script name of the TESTSUITE script
+  "testSuiteName": {JSONString} The script name of the TESTSUITE script
   "assertionCount": {JSONNumber} The total number of assertions made for the TESTSUITE,
   "assertionFailCount": {JSONNumber} The total number of fails for the TESTSUITE,
   "assertionPassCount": {JSONNumber} The total number of passes for the TESTSUITE,
