@@ -42,3 +42,20 @@ Holds the Output text from FMT custom functions until the script FMT:WriteOutput
 
 ### $$FMT_SummaryOutputBuffer {text}  
 Holds the Summary Output text from FMT custom functions until the script FMT:WriteOutputBuffers is run 
+
+# Access the outputs  
+2 global fields hold the output data that we see.
+
+**FMT::Output** This is the field we see when running tests
+
+**FMT::SummaryOutput** Contains just the Init and Conclude text output. Great for displaying in external services.
+
+Once the tests are complete you can do whatever you like with these.
+Some examples would be: 
+ * returning FMT::SummaryOutput to Slack when tests are run from a slask command
+ * Use GetAsCSS(FMT::Output) and sftp the results to a web server for easy access to the result.
+ * Use FMT::SummaryOutput for a local notification
+ * Store FMT::Output in a FileMaker table
+ * etc etc etc
+  
+
