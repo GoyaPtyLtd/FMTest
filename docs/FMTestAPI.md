@@ -5,7 +5,6 @@ All scripts begin with **FMT:** (colon)
 All Custom Functions begine with **FMT.** (period)
 
 # Scripts
-Scripts used in special situations to help display or save test data
 
 ## FMT:WriteOutputBuffers 
 Writes the available testing output from $$FMT_Output and $$FMT_OutputSummary into the FMT::Output and FMT::Output_Summary global fields.  
@@ -93,7 +92,7 @@ No change
 ## FMT.Assert.Equal  
 `FMT.Assert.Equal ( describe_assertion ; value ; expected_value )`  
 
-Test that thing = value
+Test that value = expected_value
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
@@ -101,7 +100,7 @@ Test that thing = value
 
 ## FMT.Assert.NotEquals  
 `FMT.Assert.NotEquals ( describe_assertion ; value ; expected_value )`  
-Test that thing <> value  
+Test that value <> expected_value 
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
@@ -109,7 +108,7 @@ Test that thing <> value
 ## FMT.Assert.GreaterThan  
 `FMT.Assert.GreaterThan ( describe_assertion ; value ; expected_value )`  
 
-Test that thing > value
+Test that value > expected_value
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
@@ -117,7 +116,7 @@ Test that thing > value
 ## FMT.Assert.LessThan  
 `FMT.Assert.LessThan ( describe_assertion ; value ; expected_value )`  
  
-Test that thing < value
+Test that value < expected_value
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
@@ -125,7 +124,7 @@ Test that thing < value
 ## FMT.Assert.Empty 
 `FMT.Assert.Empty ( describe_assertion ; value )`  
  
-Test that thing is empty
+Test that value is empty
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
@@ -133,7 +132,7 @@ Test that thing is empty
 ## FMT.Assert.NotEmpty 
 `FMT.Assert.NotEmpty ( describe_assertion ; value )`  
 
-Test that thing is not empty
+Test that value is not empty
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
@@ -141,23 +140,23 @@ Test that thing is not empty
 ## FMT.Assert.HasJSONKey 
 `FMT.Assert.HasJSONKey ( describe_assertion ; json ; key )`  
 
-Test that the JSONObject in thing has the expected Key (definied by value)
+Test that the JSONObject in json has a key named key
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.IsInList  
-`FMT.Assert.IsInList ( describe_assertion ; list ; expected_value )`  
+`FMT.Assert.IsInList ( describe_assertion ; list ; value )`  
  
-Test that value is in a FileMaker list  
+Test that value is in list
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.NotIsInList  
-`FMT.Assert.IsInList ( describe_assertion ; list ; expected_value )`  
+`FMT.Assert.IsInList ( describe_assertion ; list ; value )`  
 
-Test that value is not in a FileMaker list
+Test that value is not in list
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
