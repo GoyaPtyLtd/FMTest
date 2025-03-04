@@ -42,7 +42,7 @@ For general use, you don't need to know about them. However the effects on each 
 [More info about the $$FMT JSON structure etc in Under the Hood](UnderTheHood.md)
 
 ## FMT.Describe  
-`FMT.Describe( testcase_description )`  
+`FMT.DescribeTest ( testcase_description )`  
 
 Place before a set of Assertions that make up a test case.  
 This should be called before calling Assertions of the current test case  
@@ -69,7 +69,7 @@ No change
 Each of the Assert custom functions below has the following:
 
 **Parameters**  
-* _describe_assertion_ {Text} Describe the thing you are asserting
+* _describe_thing_ {Text} Describe the thing you are asserting
 * _value_ {Any} The actual value from your script or calculation
 * _expected_value_ {Any} The expected value, or thing to find in thing such as the item  to find in a list
   
@@ -90,7 +90,7 @@ No change
 
 
 ## FMT.Assert.Equal  
-`FMT.Assert.Equal ( describe_assertion ; value ; expected_value )`  
+`FMT.Assert.Equal ( describe_thing ; value ; expected_value )`  
 
 Test that value = expected_value
 
@@ -99,14 +99,14 @@ Test that value = expected_value
 
 
 ## FMT.Assert.NotEquals  
-`FMT.Assert.NotEquals ( describe_assertion ; value ; expected_value )`  
+`FMT.Assert.NotEquals ( describe_thing ; value ; expected_value )`  
 Test that value <> expected_value 
 
 **Parameters, Return and and Effects**   
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.GreaterThan  
-`FMT.Assert.GreaterThan ( describe_assertion ; value ; expected_value )`  
+`FMT.Assert.GreaterThan ( describe_thing ; value ; expected_value )`  
 
 Test that value > expected_value
 
@@ -114,7 +114,7 @@ Test that value > expected_value
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.LessThan  
-`FMT.Assert.LessThan ( describe_assertion ; value ; expected_value )`  
+`FMT.Assert.LessThan ( describe_thing ; value ; expected_value )`  
  
 Test that value < expected_value
 
@@ -122,7 +122,7 @@ Test that value < expected_value
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.Empty 
-`FMT.Assert.Empty ( describe_assertion ; value )`  
+`FMT.Assert.Empty ( describe_thing ; value )`  
  
 Test that value is empty
 
@@ -130,7 +130,7 @@ Test that value is empty
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.NotEmpty 
-`FMT.Assert.NotEmpty ( describe_assertion ; value )`  
+`FMT.Assert.NotEmpty ( describe_thing ; value )`  
 
 Test that value is not empty
 
@@ -138,7 +138,7 @@ Test that value is not empty
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.HasJSONKey 
-`FMT.Assert.HasJSONKey ( describe_assertion ; json ; key )`  
+`FMT.Assert.HasJSONKey ( describe_thing ; json ; key )`  
 
 Test that the JSONObject in json has a key named key
 
@@ -146,7 +146,7 @@ Test that the JSONObject in json has a key named key
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.IsInList  
-`FMT.Assert.IsInList ( describe_assertion ; list ; value )`  
+`FMT.Assert.IsInList ( describe_thing ; list ; value )`  
  
 Test that value is in list
 
@@ -154,7 +154,7 @@ Test that value is in list
 [Assert Parameters, Returns and Effects](#FMT.Assert)
 
 ## FMT.Assert.NotIsInList  
-`FMT.Assert.IsInList ( describe_assertion ; list ; value )`  
+`FMT.Assert.IsInList ( describe_thing ; list ; value )`  
 
 Test that value is not in list
 
@@ -173,6 +173,9 @@ Test that value is not in list
 * _scriptName_ {JSONObject} 
 * _tests_ {JSONArray} An empty Array
 * _result_ {Boolean} The overall result of the script (initially true) 
+* _testCount_ {JSONNumber} The number of tests made for this test script (initially 0)  
+* _testPassCount_ {JSONNumber} The number of test passes in this test script (initially 0)  
+* _testfailCount_ {JSONNumber} The number of test fails in this test script (initially 0)  
 * _assertionCount_ {JSONNumber} The number of assertions made for this test script (initially 0)  
 * _assertionPassCount_ {JSONNumber} The number of passes in this test script (initially 0)  
 * _assertionfailCount_ {JSONNumber} The number of fails in this test script (initially 0)  
@@ -198,6 +201,9 @@ Test that value is not in a FileMaker list
 * _scriptName_ {JSONObject} 
 * _assertions_ {JSONArray} Results for all test Scenerios per 'FMT.Describe' 
 * _result_ {Boolean} The overall result of the script 
+* _testCount_ {JSONNumber} The number of tests made for this test script (initially 0)  
+* _testPassCount_ {JSONNumber} The number of test passes in this test script (initially 0)  
+* _testfailCount_ {JSONNumber} The number of test fails in this test script (initially 0) 
 * _assertionCount_ {JSONNumber} The number of assertions made for this test script
 * _assertionPassCount_ {JSONNumber} The number of passes in this test script
 * _assertionFailCount_ {JSONNumber} The number of fails in this test script
@@ -212,7 +218,7 @@ Prints the script summary
 Prints the script summary
 
 
-## FMT.InitTestCase 
+## FMT.InitTestSuite
 `FMT.InitTestCase ()`  
 
 **Paramaters {empty}**  
@@ -221,16 +227,16 @@ Prints the script summary
 The new $$FMT JSONObject
 
 **$$FMT**  
-Adds the testcase name
+Adds the test suite name
 
 **$$FMT_OutputBuffer**   
-Prints the TestCase script name
+Prints the test suite script name
 
 **$$FMT_OutputSummaryBuffer**   
-Prints the TestCase script name
+Prints the test suite script name
 
 ## FMT.ConcludeTestCase   
-`FMT.ConcludeTestCase ()`  
+`FMT.ConcludeTestSuite ()`  
 
 Set a variable using this Custom Function after all Test Scripts have been run  
 

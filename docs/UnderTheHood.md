@@ -11,6 +11,12 @@ For developers who want to intergrate FMTest with other systems.
 Contains the results and meta data used by FMTest  
 ```
   "testSuiteName": {JSONString} The script name of the TESTSUITE script
+  "testScriptCount": {JSONNumber} The total number of tests scripts run for the TESTSUITE,
+  "testScriptFailCount": {JSONNumber} The total number of fails for the TESTSUITE,
+  "testScriptPassCount": {JSONNumber} The total number of passes for the TESTSUITE,
+  "testCount": {JSONNumber} The total number of tests made for the TESTSUITE,
+  "testFailCount": {JSONNumber} The total number of fails for the TESTSUITE,
+  "testPassCount": {JSONNumber} The total number of passes for the TESTSUITE,
   "assertionCount": {JSONNumber} The total number of assertions made for the TESTSUITE,
   "assertionFailCount": {JSONNumber} The total number of fails for the TESTSUITE,
   "assertionPassCount": {JSONNumber} The total number of passes for the TESTSUITE,
@@ -19,6 +25,9 @@ Contains the results and meta data used by FMTest
 
   "scripts": []
       "scriptName": {JSONString} Name of the TESTSCRIPT
+      "testCount": {JSONNumber} The total number of tests made for the TESTSCRIPT,
+      "testFailCount": {JSONNumber} The total number of fails for the TESTSCRIPT,
+      "testPassCount": {JSONNumber} The total number of passes for the TESTSCRIPT,
       "assertionCount": {JSONNumber} The number of assertions for this TESTSCRIPT,
       "assertionFailCount": {JSONNumber} The number of fails for this TESTSCRIPT,
       "assertionPassCount": {JSONNumber} The number of passes for this TESTSCRIPT,

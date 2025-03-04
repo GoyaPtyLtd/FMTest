@@ -15,13 +15,13 @@ Set Variable [ $init ; FMT.InitTestScript ]
 
 # Run the custom function and test as often as needed
 Set Variable [ $test ; [
-  FMT.Describe ( "Check MyCustomFunction with Numbers" ) &
+  FMT.DescribeTest ( "Check MyCustomFunction with Numbers" ) &
   FMT.Assert.GreaterThan (  "Result of 300"; MyCustomFunction( 300 ) ; 200 )
   FMT.Assert.LessThan (  "Result of 10"; "MyCustomFunction( 10 ) ; 200 )
 ]]
 
 Set Variable [ $test ; [
-  FMT.Describe ( "Check MyCustomFunction with text" ) &
+  FMT.DescribeTest ( "Check MyCustomFunction with text" ) &
   FMT.Assert.Equal ( "Result of 'Hi'"; MyCustomFunction( "Hi" ) ; "Hello" )
 ]]
 
@@ -41,7 +41,7 @@ Set Variable [$isField3Hidden; GetLayoutObjectAttribute( "MyField3"; "isObjectHi
 
 # Check the results
 Set Variable [ $test ; [
-  FMT.Describe ( "Check calcs" ) &
+  FMT.DescribeTest ( "Check calcs" ) &
   FMT.Assert.Equal ( "Field3 Hidden"; $isField3Hidden ; false ) &
   FMT.Assert.LessThan ( "Field4 Calc"; MyTable::Field4_c ; 250 )
 ]]
@@ -69,7 +69,7 @@ Perform Script [ "TheScriptToTest" ]
 
 # Check the results
 Set Variable [ $test ; [
-  FMT.Describe ( "Check output fields" ) &
+  FMT.DescribeTest ( "Check output fields" ) &
   FMT.Assert.Equals ( "MyResult1"; MyTable::MyResult1 ; "Hello" ) &
   FMT.Assert.GreaterThan ( "MyResult2"; MyTable::MyResult2 ; 200 ) &
   FMT.Assert.HasJSONKey ( "MyJSON_Field"; MyTable::AsJSON ; "ID" )
@@ -88,5 +88,5 @@ If you want to watch the test results populate in the global field you can call 
 
 ## FMTest's (opinionated) Testing Structure  
 TESTSUITE has 1 or many TESTSSCRIPTS  
-TESTSCRIPT has 1 or many TESTCASES  
-TESTCASE has 1 or many ASSERTIONS  
+TESTSCRIPT has 1 or many TESTCASES (or TESTS)
+TESTCASE (or TEST) has 1 or many ASSERTIONS  
