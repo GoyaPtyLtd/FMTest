@@ -17,7 +17,7 @@ There are also initialisers and concluders that help get more information
 ```
 Set Variable [ $init ; FMT.InitTestScript ]
 
-Set Variable [ $describe ; FMT.Describe ( "My TestCase" )]
+Set Variable [ $describe ; FMT.DescribeTest ( "My TestCase" )]
 Set Variable [ $myvariable ; A_Calc_Or_ScriptResult_ToTest ]
 Set Variable [ $assert ; FMT.Assert.Equals ("My Variable"; $myvariable ; 1 )]
 
