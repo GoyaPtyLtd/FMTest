@@ -48,3 +48,9 @@ For more info on how to integrate FMTest see the [docs](docs/Main.md).
 # CHANGES  
 ## 2025.05.04:  
 For all FMT.Assert functions you can leave the 'description' blank if the 'value' is a field reference and the description will be the field name.
+
+## 1.5  
+- Added Test and TestScript counts
+- Improved summaries using the new counts
+- No matter whether you call InitTestScript or DescribeTest or not. The $$FMT JSON structure is correctly built
+- Lots of fixes and probably heaps more!
