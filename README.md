@@ -42,3 +42,9 @@ FMTest is built small by design so you're free to work with it however you'd lik
 All test results are logged in the global JSONObject $$FMT that can be used to store in a FileMaker table or integrate with other services.  
 
 For more info on how to integrate FMTest see the [docs](docs/Main.md).
+
+
+
+# CHANGES  
+## 2025.05.04:  
+For all FMT.Assert functions you can leave the 'description' blank if the 'value' is a field reference and the description will be the field name.
