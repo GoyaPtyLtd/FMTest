@@ -95,15 +95,15 @@ No change
 Test that value = expected_value
 
 **Parameters, Return and Effects**   
-See [FMT.Assert](#FMT.Assert)
+See [FMT.Assert](#fmtassert)
 
 
 ## FMT.Assert.NotEquals  
 `FMT.Assert.NotEquals ( describe_thing ; value ; expected_value )`  
 Test that value <> expected_value 
 
-**Parameters, Return and and Effects**   
-[Assert Parameters, Returns and Effects](#FMT.Assert)
+**Parameters, Return and Effects**   
+See [FMT.Assert](#fmtassert)
 
 ## FMT.Assert.GreaterThan  
 `FMT.Assert.GreaterThan ( describe_thing ; value ; expected_value )`  
@@ -111,7 +111,7 @@ Test that value <> expected_value
 Test that value > expected_value
 
 **Parameters, Return and Effects**   
-See [FMT.Assert](#FMT.Assert)
+See [FMT.Assert](#fmtassert)
 
 ## FMT.Assert.LessThan  
 `FMT.Assert.LessThan ( describe_thing ; value ; expected_value )`  
@@ -119,7 +119,7 @@ See [FMT.Assert](#FMT.Assert)
 Test that value < expected_value
 
 **Parameters, Return and Effects**   
-See [FMT.Assert](#FMT.Assert)
+See [FMT.Assert](#fmtassert)
 
 ## FMT.Assert.Empty 
 `FMT.Assert.Empty ( describe_thing ; value )`  
@@ -127,7 +127,7 @@ See [FMT.Assert](#FMT.Assert)
 Test that value is empty
 
 **Parameters, Return and Effects**   
-See [FMT.Assert](#FMT.Assert)
+See [FMT.Assert](#fmtassert)
 
 ## FMT.Assert.NotEmpty 
 `FMT.Assert.NotEmpty ( describe_thing ; value )`  
@@ -135,7 +135,7 @@ See [FMT.Assert](#FMT.Assert)
 Test that value is not empty
 
 **Parameters, Return and Effects**   
-See [FMT.Assert](#FMT.Assert)
+See [FMT.Assert](#fmtassert)
 
 ## FMT.Assert.HasJSONKey 
 `FMT.Assert.HasJSONKey ( describe_thing ; json ; key )`  
@@ -143,7 +143,7 @@ See [FMT.Assert](#FMT.Assert)
 Test that the JSONObject in json has a key named key
 
 **Parameters, Return and Effects**   
-See [FMT.Assert](#FMT.Assert)
+See [FMT.Assert](#fmtassert)
 
 ## FMT.Assert.IsInList  
 `FMT.Assert.IsInList ( describe_thing ; list ; value )`  
@@ -151,7 +151,7 @@ See [FMT.Assert](#FMT.Assert)
 Test that value is in list
 
 **Parameters, Return and Effects**   
-See [FMT.Assert](#FMT.Assert)
+See [FMT.Assert](#fmtassert)
 
 ## FMT.Assert.NotIsInList  
 `FMT.Assert.IsInList ( describe_thing ; list ; value )`  
@@ -159,7 +159,7 @@ See [FMT.Assert](#FMT.Assert)
 Test that value is not in list
 
 **Parameters, Return and Effects**   
-See [FMT.Assert](#FMT.Assert)
+See [FMT.Assert](#fmtassert)
   
 
 # Initialisers and Concluders
