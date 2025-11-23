@@ -35,13 +35,23 @@ My TestScript complete
 Of 1 Assertions, ALL PASSED
 ```
 
-**[FOR MORE INFORMATION - SEE THE DOCS](docs/Main.md)**  
+
+# THE DOCS
+[Documentation](docs/Main.md)
+
+[Automated testing in a nutshell at Engage 2025](https://www.youtube.com/watch?v=WxioEgyuZmM)
+
+[![Automated testing in a nutshell at Engage 2025](https://img.youtube.com/vi/WxioEgyuZmM/0.jpg)](https://www.youtube.com/watch?v=WxioEgyuZmM)
 
 ### Integration with other services and/or logging test results  
 FMTest is built small by design so you're free to work with it however you'd like.
 All test results are logged in the global JSONObject $$FMT that can be used to store in a FileMaker table or integrate with other services.  
 
 For more info on how to integrate FMTest see the [docs](docs/Main.md).
+
+
+
+
 
 
 
