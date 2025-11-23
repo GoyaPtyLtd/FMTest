@@ -69,9 +69,9 @@ No change
 Each of the Assert custom functions below has the following:
 
 **Parameters**  
-* _describe_thing_ {Text} Describe the thing you are asserting
-* _value_ {Any} The actual value from your script or calculation
-* _expected_value_ {Any} The expected value, or thing to find in thing such as the item  to find in a list
+* _describe_thing_ {Text} Describe the thing you are asserting. Ideally the field name, variable name, custom function etc you using as the _value_.  NOTE this can be empty if _value_ is a field reference - the field name will be assumed.
+* _value_ {Any} The actual value from your script or calculation. Can be a field reference, script result, variable, custom function or calculation such as `GetLayoutObjectAttribute( "myButton" ; "isObjectHidden" )`
+* _expected_value_ {Any} The expected value/result of _value_. Or the text to match for assertions asking for a list item or JSON key.
   
 **Returns {JSONObject}**  
 * _description_ {Text} As passed into the function
